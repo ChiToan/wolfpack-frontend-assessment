@@ -28,12 +28,14 @@ const removewolf = (id, wolf_id) => {
   return http.delete(`/packs/${id}/wolf/${wolf_id}`);
 };
 
-export {
+const service = {
   getAll,
   get,
   create,
   update,
   remove,
   addwolf,
-  removewolf
+  removewolf,
 };
+
+export default service;

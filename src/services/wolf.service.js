@@ -26,6 +26,6 @@ const service = {
   create,
   update,
   remove,
-}
+};
 
 export default service;

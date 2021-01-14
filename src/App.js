@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { HashRouter, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -10,7 +10,7 @@ import WolfList from './components/wolfList'
 class App extends Component {
   render() {
     return (
-      <div>
+      <HashRouter>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <a href="/wolves" className="navbar-brand">
             Toan
@@ -36,7 +36,7 @@ class App extends Component {
             <Route path="/wolves/:id" component={WolfProfile} />
           </Switch>
         </div>
-      </div>
+      </HashRouter>
     );
   }
 }

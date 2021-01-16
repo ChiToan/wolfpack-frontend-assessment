@@ -75,18 +75,17 @@ const PackProfile = (props) => {
   }, [props.match.params.id]);
 
   const updatePack = () => {
-    if (hasError) {
-      console.error("Invalid Form");
-    } else {
-      PackDataService.update(currentPack.id, currentPack)
-        .then((response) => {
-          console.log(response.data);
-          setMessage("The pack was updates successfully");
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
+    PackDataService.update(currentPack.id, currentPack)
+      .then((response) => {
+        console.log(response.data);
+        setMessage("The pack was updates successfully");
+        setTimeout( () => {
+          setMessage("")
+        }, 5000)
+      })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   const deletePack = () => {
@@ -122,8 +121,8 @@ const PackProfile = (props) => {
       .then((response) => {
         console.log(response.data);
         let newPackWolves = currentPack.wolves.slice();
-        newPackWolves.push(wolves.find( (wolf) => wolf.id === wolf_id))
-        setCurrentPack({...currentPack, wolves: newPackWolves});
+        newPackWolves.push(wolves.find((wolf) => wolf.id === wolf_id));
+        setCurrentPack({ ...currentPack, wolves: newPackWolves });
         setWolves(wolves.filter((wolf) => wolf.id !== wolf_id));
       })
       .catch((e) => {
@@ -136,9 +135,12 @@ const PackProfile = (props) => {
       .then((response) => {
         console.log(response.data);
         let newWolves = wolves.slice();
-        newWolves.push(currentPack.wolves.find( (wolf) => wolf.id === wolf_id))
-        setWolves(newWolves)
-        setCurrentPack({...currentPack, wolves: currentPack.wolves.filter((wolf) => wolf.id !== wolf_id)});
+        newWolves.push(currentPack.wolves.find((wolf) => wolf.id === wolf_id));
+        setWolves(newWolves);
+        setCurrentPack({
+          ...currentPack,
+          wolves: currentPack.wolves.filter((wolf) => wolf.id !== wolf_id),
+        });
       })
       .catch((e) => {
         console.log(e);
@@ -150,7 +152,7 @@ const PackProfile = (props) => {
       {currentPack ? (
         <div className="edit-form">
           <h4>Pack {currentPack.id}</h4>
-          <form>
+          <div>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -212,8 +214,9 @@ const PackProfile = (props) => {
             >
               Update pack information
             </button>
-            <p>{message}</p>
-          </form>
+            {message ? <p>{message}</p> : ''}
+            
+          </div>
 
           <br />
 

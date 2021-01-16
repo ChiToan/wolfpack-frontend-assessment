@@ -5,15 +5,15 @@ const PackAdd = () => {
   const initialPackState = {
     id: null,
     name: "",
-    gender: "",
-    birthday: "",
+    lng: "",
+    lat: "",
   };
   const [pack, setPack] = useState(initialPackState);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState({
     name: " ",
-    gender: " ",
-    birthday: " ",
+    lng: " ",
+    lat: " ",
   });
   const [hasError, setHasError] = useState(true);
 
@@ -29,14 +29,17 @@ const PackAdd = () => {
       case "name":
         newErrors.name = value.length < 1 ? "No name given!!" : "";
         break;
-      case "gender":
-        newErrors.gender =
-          value === "female" || value === "male"
+      case "lng":
+        newErrors.lng =
+          isFinite(value) && Math.abs(value) <= 180
             ? ""
-            : "Gender not male or female";
+            : "Invalid longitude given!";
         break;
-      case "birthday":
-        newErrors.birthday = Date.parse(value) ? "" : "Invalid date given!";
+      case "lat":
+        newErrors.lat =
+          isFinite(value) && Math.abs(value) <= 90
+            ? ""
+            : "Invalid latitude given!";
         break;
       default:
         break;
@@ -52,8 +55,8 @@ const PackAdd = () => {
   const savePack = () => {
     var data = {
       name: pack.name,
-      gender: pack.gender,
-      birthday: pack.birthday,
+      lat: pack.lat,
+      lng: pack.lng,
     };
     if (hasError) {
       console.error("Invalid Form");
@@ -63,8 +66,8 @@ const PackAdd = () => {
           setPack({
             id: response.data.id,
             name: response.data.name,
-            gender: response.data.gender,
-            birthday: response.data.birthday,
+            lat: response.data.lat,
+            lng: response.data.lng,
           });
           setSubmitted(true);
           console.log(response.data);
@@ -102,6 +105,36 @@ const PackAdd = () => {
               value={pack.name}
               onChange={handleInputChange}
               name="name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lng">Longitude</label>
+            <input
+              type="number"
+              className="form-control"
+              id="lng"
+              name="lng"
+              min="-180"
+              max="180"
+              step="any"
+              required
+              value={pack.lng}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="lat">Latitude</label>
+            <input
+              type="number"
+              className="form-control"
+              id="lat"
+              name="lat"
+              min="-90"
+              max="90"
+              step="any"
+              required
+              value={pack.lat}
+              onChange={handleInputChange}
             />
           </div>
 

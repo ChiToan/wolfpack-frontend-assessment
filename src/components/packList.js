@@ -57,6 +57,18 @@ const PackList = () => {
               </label>{" "}
               {currentPack.name}
             </div>
+            <div>
+              <label>
+                <strong>Longitude:</strong>
+              </label>{" "}
+              {currentPack.lng}
+            </div>
+            <div>
+              <label>
+                <strong>Latitude:</strong>
+              </label>{" "}
+              {currentPack.lat}
+            </div>
 
             <Link
               to={"/packs/" + currentPack.id}

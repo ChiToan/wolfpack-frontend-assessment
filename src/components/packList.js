@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PackDataService from "../services/pack.service";
 import { Link } from "react-router-dom";
+import PackListMap from "./packListMap";
 
 const PackList = () => {
   const [packs, setPacks] = useState([]);
@@ -84,6 +85,7 @@ const PackList = () => {
           </div>
         )}
       </div>
+        <PackListMap packs={packs} currentPack={currentPack}/>
     </div>
   );
 };

@@ -12,7 +12,12 @@ const PackListMap = (props) => {
 
   return (
     <ComposableMap>
-      <Geographies geography={geoUrl}>
+      <Geographies
+        geography={geoUrl}
+        fill="#D6D6DA"
+        stroke="#FFFFFF"
+        strokeWidth={0.5}
+      >
         {({ geographies }) =>
           geographies.map((geo) => (
             <Geography key={geo.rsmKey} geography={geo} />
@@ -22,11 +27,20 @@ const PackListMap = (props) => {
       {props.packs &&
         props.packs.map((pack) => (
           <Marker key={pack.id} coordinates={[pack.lng, pack.lat]}>
-            <circle r={10} fill="#F00" stroke="#fff" strokeWidth={2} />
+            <circle
+              r={6}
+              fill={
+                props.currentPack && pack.id === props.currentPack.id
+                  ? "#F00"
+                  : "#999"
+              }
+              stroke="#fff"
+              strokeWidth={2}
+            />
             <text
               textAnchor="middle"
               y="-15"
-              style={{ fontFamily: "system-ui", fill: "#F00" }}
+              style={{ fontFamily: "system-ui", fill: "#222" }}
             >
               {pack.name}
             </text>

@@ -31,7 +31,9 @@ const PackList = () => {
   return (
     <div className="list row">
       <div className="col-md-6">
-        <h4>Packs List</h4>
+        <h4>Packs List <Link to={"/addpack"} className="btn btn-primary ml-3">
+            Add new pack
+          </Link></h4>
 
         <ul className="list-group">
           {packs &&

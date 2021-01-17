@@ -30,7 +30,12 @@ const WolfList = () => {
   return (
     <div className="list row">
       <div className="col-md-6">
-        <h4>Wolves List</h4>
+        <div>
+          <h4>Wolves List   
+          <Link to={"/addwolf"} className="btn btn-primary ml-3">
+            Add new wolf
+          </Link></h4>
+        </div>
 
         <ul className="list-group">
           {wolves &&
@@ -70,17 +75,14 @@ const WolfList = () => {
               {currentWolf.gender}
             </div>
 
-            <Link
-              to={"/wolves/" + currentWolf.id}
-              className="btn btn-warning"
-            >
+            <Link to={"/wolves/" + currentWolf.id} className="btn btn-warning">
               Edit
             </Link>
           </div>
         ) : (
           <div>
             <br />
-            <p>Please click on a Wolf...</p>
+            <p>Please select on a Wolf...</p>
           </div>
         )}
       </div>

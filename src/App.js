@@ -24,21 +24,21 @@ class App extends Component {
                 Wolves
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to={"/addwolf"} className="nav-link">
                 Add Wolf
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to={"/packs"} className="nav-link">
                 Packs
               </Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to={"/addpack"} className="nav-link">
                 Add Packs
               </Link>
-            </li>
+            </li> */}
           </div>
         </nav>
 

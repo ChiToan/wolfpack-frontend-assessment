@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import WolfDataService from "../services/wolf.service";
 
 const WolfAdd = () => {
@@ -88,6 +89,9 @@ const WolfAdd = () => {
           <button className="btn btn-success" onClick={newWolf}>
             Add another one
           </button>
+          <Link to={"/wolves"} className="btn btn-primary ml-3">
+            Back to list
+          </Link>
         </div>
       ) : (
         <div className="form">

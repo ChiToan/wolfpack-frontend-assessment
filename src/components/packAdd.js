@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import PackDataService from "../services/pack.service";
 
 const PackAdd = () => {
@@ -91,6 +92,9 @@ const PackAdd = () => {
           <button className="btn btn-success" onClick={newPack}>
             Add another one
           </button>
+          <Link to={"/packs"} className="btn btn-primary ml-3">
+            Back to list
+          </Link>
         </div>
       ) : (
         <div className="form">

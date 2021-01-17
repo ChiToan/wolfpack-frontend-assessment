@@ -1,3 +1,13 @@
+# Wolfpack frontend assessment
+This github contains a webapp for the Wolfpack API made with the React library. The npm packages relevant that I used are as follows: 
+⋅⋅* Axios: To handle the API calls without repeating too much in each component 
+⋅⋅* Bootstrap: To create the UI without too much hassle given my limited time
+⋅⋅* React-simple-maps: To create a simple world map view that shows the wolf packs.
+
+The Github pages located [here](https://chitoan.github.io/wolfpack-frontend-assessment/) contains the webapp of this repository.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

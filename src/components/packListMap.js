@@ -6,12 +6,19 @@ import {
   Marker,
 } from "react-simple-maps";
 
-const PackListMap = (props) => {
-  const geoUrl =
-    "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+const geoUrl =
+  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json";
 
+const PackListMap = (props) => {
   return (
-    <ComposableMap>
+    <ComposableMap
+      width={980}
+      height={600}
+      style={{
+        width: "100%",
+        height: "auto",
+      }}
+    >
       <Geographies
         geography={geoUrl}
         fill="#D6D6DA"

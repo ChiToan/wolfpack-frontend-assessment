@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wolfpack-frontend-assessment/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/wolfpack-frontend-assessment/static/js/main.2344f520.chunk.js",
-    "main.js.map": "/wolfpack-frontend-assessment/static/js/main.2344f520.chunk.js.map",
+    "main.js": "/wolfpack-frontend-assessment/static/js/main.ae0873b2.chunk.js",
+    "main.js.map": "/wolfpack-frontend-assessment/static/js/main.ae0873b2.chunk.js.map",
     "runtime-main.js": "/wolfpack-frontend-assessment/static/js/runtime-main.c575e262.js",
     "runtime-main.js.map": "/wolfpack-frontend-assessment/static/js/runtime-main.c575e262.js.map",
     "static/css/2.ae9f1eb3.chunk.css": "/wolfpack-frontend-assessment/static/css/2.ae9f1eb3.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.ae9f1eb3.chunk.css",
     "static/js/2.57ab00a0.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.2344f520.chunk.js"
+    "static/js/main.ae0873b2.chunk.js"
   ]
 }
